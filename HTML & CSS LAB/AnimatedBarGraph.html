@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Bar Graph</title>
+    <link rel="stylesheet" href="AnimatedBarGraph.css">
+</head>
+<body>
+    <div class="container">
+        <div class="bar" style="--percentage: 30;"></div>
+        <div class="bar" style="--percentage: 40;"></div>
+        <div class="bar" style="--percentage: 80;"></div>
+        <h1>Bar Plot</h1>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            var bars = document.querySelectorAll('.bar');
+            bars.forEach(function(bar) {
+                var percentage = parseInt(bar.style.getPropertyValue('--percentage'));
+                bar.style.animation = `fill 2s forwards`;
+            });
+        };
+    </script>
+</body>
+</html>
